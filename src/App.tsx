@@ -1,5 +1,6 @@
 import { DefaultTheme, ThemeProvider } from 'styled-components';
 import Header from './components/Header';
+import Footer from './components/Footer';
 import Card from './components/Card';
 import { Container } from './components/styles/Container.styled';
 import GlobalStyles from './components/styles/Global';
@@ -14,20 +15,21 @@ const theme: DefaultTheme = {
 	mobile: '768px',
 };
 
-function App() {
+const App: React.FC = () => {
 	return (
 		<ThemeProvider theme={theme}>
 			<>
 				<GlobalStyles />
 				<Header />
 				<Container>
-					{content.map((item, index) => (
-						<Card key={index} item={item} />
+					{content.map((item) => (
+						<Card key={item.id} item={item} />
 					))}
 				</Container>
+				<Footer />
 			</>
 		</ThemeProvider>
 	);
-}
+};
 
 export default App;

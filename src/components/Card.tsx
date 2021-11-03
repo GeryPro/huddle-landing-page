@@ -1,5 +1,6 @@
 import React from 'react';
 import { ContentItem } from '../content';
+import { StyledCard } from './styles/Card.styles';
 
 type Props = {
 	key: number;
@@ -9,7 +10,7 @@ type Props = {
 const Card: React.FC<Props> = ({ item }) => {
 	const { id, title, body, image } = item;
 	return (
-		<div>
+		<StyledCard layout={id % 2 === 0 ? 'row-reverse' : 'row'}>
 			<div>
 				<h2>{title}</h2>
 				<p>{body}</p>
@@ -17,7 +18,7 @@ const Card: React.FC<Props> = ({ item }) => {
 			<div>
 				<img src={`./images/${image}`} alt={title} />
 			</div>
-		</div>
+		</StyledCard>
 	);
 };
 

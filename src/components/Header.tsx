@@ -3,7 +3,7 @@ import { Container } from './styles/Container.styled';
 import { Flex } from './styles/Flex.styled';
 import { Button } from './styles/Button.styled';
 
-const Header = () => {
+const Header: React.FC = () => {
 	return (
 		<StyledHeader>
 			<Container>
